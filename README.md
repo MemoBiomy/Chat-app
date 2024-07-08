@@ -22,8 +22,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution at frontend mentor](https://your-solution-url.com)
-- Live Site URL: [Live site](https://your-live-site-url.com)
+- Solution URL: [Solution at frontend mentor](https://www.frontendmentor.io/solutions/chat-app-html---css---flexbox---mobile-first-workflow-rtVOj_GEVk)
+- Live Site URL: [Live site](https://memobiomy.github.io/Chat-app/)
 
 ## My process
 
