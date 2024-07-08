@@ -25,23 +25,75 @@ body {
     font-family: var(--fontRubik);
     background-color: var(--lightGrayishVioletAppBackground);
     padding: 80px 0;
+    width: 100vw;
+    overflow-x: hidden;
 }
-
+body::before {
+    content: "";
+    height: 500px;
+    width: 50%;
+    background-image: linear-gradient(to top, var(--lightViolet), var(--lightMagenta));
+    border-radius: 0 0 1000px 1000px;
+    position: absolute;
+    top: 0px;
+    right: 100%;
+    transform: translateX(50%);
+}
+body::after {
+    content: "";
+    height: 500px;
+    width: 50%;
+    background-color: #f9f4fa;
+    background-color: #f1edf1;
+    border-radius: 1000px 1000px 0 0;
+    position: absolute;
+    bottom: 0px;
+    left: 100%;
+    transform: translateX(-50%);
+}
+/* another solution */
+/* body::after {
+    content: "";
+    height: 500px;
+    width: 23%;
+    background-color: #f1edf1;
+    border-radius: 1000px 0 0 0;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+} */
 .container {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 50px;
     align-items: center;
 }
-
+@media (min-width: 768px) {
+    .container {
+        width: 680px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 890px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 900px;
+    }
+}
 .mobile {
-    min-width: 360px;
+    width: 100%;
+    max-width: 360px;
     border-radius: 36px;
     background-color: white;
     /* border: 14px solid var(--lightGrayishVioletAppBackground); */
     padding: 16px;
     position: relative;
+    box-shadow: 14px 24px 48px 0 #63487b2b;
+    z-index: 2;
 }
 .mobile::before {
     content: "";
@@ -188,6 +240,46 @@ form button {
     top: 3px;
     right: 6px;
     font-weight: var(--weightBold);
-    font-size: 17px;
+    font-size: 18px;
 }
-form button i {}
+.container > .text {
+    width: 90%;
+    max-width: 560px;
+    z-index: 2;
+}
+.container > .text h1 {
+    color: var(--veryDarkDesaturatedViolet);
+    margin: 0 auto 30px;
+    font-size: 41px;
+    font-weight: 600;
+}
+.container > .text p {
+    color: #9c9b9f;
+    line-height: 1.5;
+}
+@media (min-width: 768px) {
+    body {
+        padding: unset;
+    }
+    .container {
+        text-align: start;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: unset;
+    }
+    .container > .text {
+        position: relative;
+        width: 35%;
+        max-width: unset;
+    }
+}
+@media (min-width: 992px) {
+    .container > .text {
+        width: 52%;
+    }
+}
+@media (min-width: 1200px) {
+    .container > .text h1 {
+        font-size: 48px;
+    }
+}
